@@ -1,0 +1,42 @@
+.profile-container{
+    box-shadow: 3px 6px 12px var(--shadow-color);
+    background-image:url("/public/images/recepies/image_26.jpg") ;
+    border-radius: 5px;
+    object-fit: cover;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 28rem;
+    .title{
+        color: #fff;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-weight: 450;
+    }
+    .image{
+        display: flex;
+        justify-content: center;
+        img{
+            height: 9.5rem;
+            width: 9.5rem;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+        }
+    }
+    .details{
+        .name{
+            color: #fff;
+            font-weight: 400;
+            padding: .8rem;
+        }
+        .email{
+            color: #fff;
+            font-weight: 400;
+            padding: .8rem;
+        }
+    }
+    .logout{
+        margin-top: .5em;
+    }
+}
