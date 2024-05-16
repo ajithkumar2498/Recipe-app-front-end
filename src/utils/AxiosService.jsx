@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const AxiosService = axios.create({
-    baseURL:"http://localhost:7005",
+    baseURL:"https://recipe-app-backend-qc05.onrender.com",
     headers:{
         "Content-Type":"application/json"
     }
