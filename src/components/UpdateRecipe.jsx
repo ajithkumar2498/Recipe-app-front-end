@@ -19,7 +19,7 @@ function UpdateRecipe() {
     const [ingredients,setIngredients]= useState('')
     const [procedure, setProcedure] = useState('')
     const [recipe, setRecipe]=useState()
-    const [data, setData]=useState()
+   
 
     const { id } = useParams()
     console.log(id)
@@ -55,11 +55,6 @@ function UpdateRecipe() {
       formData.append("ingredients", values.ingredients);
       formData.append("recipeimage", recipeimage);
       formData.append("procedure", values.procedure);
-      console.log(recipeimage,authorimage)
-      const rep = Object.fromEntries(formData)
-      console.log(rep)
-      setData(rep)
-      console.log(formData.get('authorimage'))
       resetForm()
         const response = await AxiosService.put(`${ApiRoutes.updaterecipe.path}/${id}`, formData, { headers: { "Content-Type": "multipart/form-data" } })
        if(response.status===200){
