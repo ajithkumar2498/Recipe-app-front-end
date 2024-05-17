@@ -64,14 +64,9 @@ function RecipeSteps() {
         </div>
         <div className="Instructions">
         <span>Instructions</span>
-        {
-          procedure.map((pro, index)=>{
-            return <ul className="instruction" key={index}>
-            <li>{pro}</li>
+           <ul className="instruction" >
+            <li>{recipe.procedure}</li>
            </ul>
-          })
-        }
-           
         </div>
          <div className="createdby">
             <p>Recipe By</p>
