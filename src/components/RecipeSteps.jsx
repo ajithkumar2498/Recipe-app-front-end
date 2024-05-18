@@ -44,7 +44,7 @@ function RecipeSteps() {
       {loader ?  <div className="loader" style={{textAlign:'center',margin:'10em'}}> 
       <ClipLoader loading={loader} size={80} aria-label="Loading Spinner" height={80} data-testid="loader" />
       </div> : recipe ?    <>
-      <button className="btn1 " onClick={()=> auth ? navigate('/yourrecipes') : navigate('/recepies')}><FontAwesomeIcon icon={faArrowLeft} className="back-icon"></FontAwesomeIcon></button>
+      <button className="btn1 " onClick={()=> navigate('/recepies')}><FontAwesomeIcon icon={faArrowLeft} className="back-icon"></FontAwesomeIcon></button>
        <div className="recipe-image">
         <img src={recipe.recipeimage.url} alt="" />
         <div className="chef-image">
