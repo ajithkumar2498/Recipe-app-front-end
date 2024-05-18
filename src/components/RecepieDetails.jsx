@@ -8,7 +8,6 @@ import { useEffect, useState } from "react"
 import { ClipLoader } from "react-spinners";
 
 function RecepieDetails() {
-  const auth = sessionStorage.getItem("token")
   const [recipe, setRecipe]=useState(null)
   const [ingredients, setIngredients] = useState('')
   const [procedure, setProcedure]=useState([])
@@ -47,7 +46,7 @@ function RecepieDetails() {
       <div className="loader" style={{textAlign:'center',margin:'10em'}}> 
       <ClipLoader loading={loader} size={80} aria-label="Loading Spinner" height={80} data-testid="loader" />
       </div> </>   : recipe ?    <>
-      <button className="btn1 " onClick={()=> auth ? navigate('/yourrecipes') : navigate('/recipies')}><FontAwesomeIcon icon={faArrowLeft} className="back-icon"></FontAwesomeIcon></button>
+      <button className="btn1 " onClick={()=> navigate('/yourrecipes') }><FontAwesomeIcon icon={faArrowLeft} className="back-icon"></FontAwesomeIcon></button>
        <div className="recipe-image">
         <img src={recipe.recipeimage.url} alt="" />
         <div className="chef-image">

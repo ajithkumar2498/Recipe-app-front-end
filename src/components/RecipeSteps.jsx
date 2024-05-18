@@ -10,7 +10,6 @@ import { ClipLoader } from 'react-spinners';
 
 function RecipeSteps() {
     const [recipe, setRecipe]=useState(null)
-    const auth = sessionStorage.getItem("token")
     const [ingredients, setIngredients] = useState('')
     const [procedure, setProcedure] = useState('')
     const [loader,setLoader]=useState(true)
@@ -24,7 +23,7 @@ function RecipeSteps() {
                 setLoader(false)
                 setRecipe(response.data.recipe);
                 const ing = response.data.recipe.ingredients[0].split(',')
-                const pro = response.data.recipe.procedure[0].split('.')
+                const pro = response.data.recipe.procedure.split('.')
                 setIngredients(ing)
                 setProcedure(pro)
                 toast.success(`${response.data.recipe.recipename} recipe is here`, {icon:"🥘"})
