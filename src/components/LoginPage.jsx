@@ -29,7 +29,7 @@ function LoginPage() {
 				sessionStorage.setItem('id', res.data.id)
 				toast.success(res.data.message)
 				if(res.data.role === "user"){
-                    navigate('/home')
+                    navigate('/yourrecipes')
 				}else{
 					navigate(`/profile/${res.data.id}`)
 				}
@@ -44,7 +44,6 @@ function LoginPage() {
 		password:""
 	}
 	const ValidateSchema = yup.object().shape({
-		
 		email: yup.string().email().required(),
 		password: yup.string().required()
 	})
