@@ -25,14 +25,9 @@ function AddRecipe() {
       formData.append("ingredients", values.ingredients);
       formData.append("recipeimage", recipeimage);
       formData.append("procedure", values.procedure);
-      console.log(recipeimage,authorimage)
-      console.log(formData)
       resetForm()
       const res = await AxiosService.post(`${ApiRoutes.addrecipe.path}/${id}`,formData,{ headers: { "Content-Type": "multipart/form-data" } } )
-      // setRecipeImage('')
-      // setRecipeImage('')
       if (res.status === 201) {  
-        console.log("Recipe added successfully:", res.data);
         toast.success(res.data.message || "recipe added successfully");
         nav('/yourrecipes')
       } else {
@@ -61,7 +56,6 @@ function AddRecipe() {
     // recipeimage:yup.string().required(),
     procedure: yup.string().required(),
   });
-  console.log();
   
   return (
     <>

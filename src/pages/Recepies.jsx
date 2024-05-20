@@ -12,7 +12,6 @@ function Recepies() {
     const fetchRecipes= async ()=>{
       const res = await AxiosService.get(`${ApiRoutes.getallrecipe.path}`)
       if(res.status===200){
-        console.log(res)
         setRecipes(res.data.recipes)
         setLoader(false)
       }

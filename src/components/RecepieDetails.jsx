@@ -18,14 +18,13 @@ function RecepieDetails() {
       const fetchRecipe = async () => {
         try {
           const res = await AxiosService.get(`${ApiRoutes.getRecipeById.path}/${id}/rp`)
-          // console.log(res)
+          
           if(res.status===200){
             setRecipe(res.data.recipe);
             setLoader(false)
             // procedure =  res.data.recipe.procedure
             const ing = res.data.recipe.ingredients[0].split(',')
             setIngredients(ing)
-            console.log(ing)
             // setProcedure(procedure.split('.'))
             toast.success(`${res.data.recipe.recipename} recipe is here`, {icon:"🍛"})
           }else{
@@ -37,7 +36,7 @@ function RecepieDetails() {
       };
     fetchRecipe();
     },5000)
-   console.log(ingredients)
+  
   },[id])
   const navigate = useNavigate()
   return <>
@@ -60,7 +59,7 @@ function RecepieDetails() {
         <div className="ingredients">
           <span>Ingredients</span>
           {ingredients.map((ingredient, index) =>{ return (<ul className="ingredient" key={index} >
-                <li> <FontAwesomeIcon className="fa"icon={faSpoon}/> {ingredient}{console.log(ingredient)}</li>
+                <li> <FontAwesomeIcon className="fa"icon={faSpoon}/> {ingredient}</li>
               </ul>)
             })}
         </div>

@@ -20,7 +20,6 @@ function SignUp() {
 	
 		try {
 		  let formData = {...values}
-		  console.log(formData)
 		  let res = await AxiosService.post(ApiRoutes.SignUp.path, formData)
 			  if(res.status === 201){
 				  toast.success(res.data.message)

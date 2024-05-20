@@ -56,8 +56,6 @@ function Settings() {
      _settings["--primary-color"] = _color
      setSettings(_settings)
       setPrimaryColor(i)
-      console.log(i)
-      console.log(_settings)
       window.localStorage.setItem("primaryColors",i)
       window.localStorage.setItem("PrimaryColor",_color)
     }
@@ -74,7 +72,6 @@ function Settings() {
   }
   function changeAnimationSpeed(i){
     const _speed = animatonSpeeds[i]
-    console.log(_speed.title)
     const _settings = {...settings}
     _settings["--animation-speed"] = _speed.value
     setAnimationSpeed(i)

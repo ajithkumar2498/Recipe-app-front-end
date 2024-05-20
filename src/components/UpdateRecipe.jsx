@@ -19,16 +19,12 @@ function UpdateRecipe() {
     const [ingredients,setIngredients]= useState('')
     const [procedure, setProcedure] = useState('')
     const [recipe, setRecipe]=useState()
-   
-
     const { id } = useParams()
-    console.log(id)
     useEffect(() => {
      
       const fetchRecipe = async () => {
         try {
           const response = await AxiosService.get(`${ApiRoutes.getRecipeById.path}/${id}/rp`)
-          console.log(response)
           setRecipe(response);
           setRecipeName(response.data.recipe.recipename)
           setRecipeDesc(response.data.recipe.recipedesc)
@@ -58,7 +54,6 @@ function UpdateRecipe() {
       resetForm()
         const response = await AxiosService.put(`${ApiRoutes.updaterecipe.path}/${id}`, formData, { headers: { "Content-Type": "multipart/form-data" } })
        if(response.status===200){
-        console.log(response.data)
         toast.success(response.data.message || "Recipe Updated Successfully")
         nav('/yourrecipes')
        } 
