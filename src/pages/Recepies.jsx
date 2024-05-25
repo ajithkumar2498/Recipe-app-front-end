@@ -6,7 +6,7 @@ import ApiRoutes from '../utils/ApiRoutes'
 import { ClipLoader } from 'react-spinners'
 function Recepies() {
   const [loader, setLoader]=useState(true)
-  const [color, setColor]=('FF0080')
+  const [color, setColor]=('#ff0056')
  const [recipes, setRecipes]=useState([])
   useEffect(()=>{
     const fetchRecipes= async ()=>{
@@ -22,7 +22,7 @@ function Recepies() {
   return <>
     <PreviousSearches/>
     <div className="recepies-container">
-      { loader ? <div className="loader" style={{textAlign:'center', marginBottom:"20em"}}> <ClipLoader loading={loader} color = {color} size={80} aria-label="Loading Spinner" height={80} data-testid="loader" /></div> :
+      { loader ? <div className="loader" style={{textAlign:'center', marginBottom:"20em", marginTop:"5em"}}> <ClipLoader loading={loader} color = {color} size={80} aria-label="Loading Spinner" height={80} data-testid="loader" /></div> :
         recipes.map((re, index)=>(
           <RecipeCard key={index} re={re}/>
         

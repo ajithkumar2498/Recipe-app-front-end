@@ -47,6 +47,7 @@ function YourRecipe() {
     }
   }, [userId]);
   const handleDeleteRecipe = async (recipeId) => {
+    alert("did you want to delete your recipe")
     try {
       let res = await AxiosService.delete(
         `${ApiRoutes.deleterecipe.path}/${recipeId}`

@@ -84,9 +84,12 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    text-align: end;
     justify-content: end;
     margin-top: 2em;
-    margin-left: 35em;
+    .recipeby{
+        font-weight: 700;
+    }
    }
     
   }
