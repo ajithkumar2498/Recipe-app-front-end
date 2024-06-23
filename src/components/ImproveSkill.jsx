@@ -22,7 +22,7 @@ function ImproveSkill() {
                 {list.map((item,index)=>( 
                  <p className='skill-items' key={index}> {item}</p>
                  ))}
-                <button className="btn1" onClick={()=> navigate('/signup')}>Add Your Recipe</button>
+                <button className="btn1" onClick={()=> auth ? navigate('/addrecepies') : navigate('/signup')}>Add Your Recipe</button>
             </div>
 
     
