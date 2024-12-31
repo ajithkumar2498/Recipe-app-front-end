@@ -2,12 +2,13 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
     grid-gap: 1.5em; 
-
+    position: relative;
 }
 .recipe-card{
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow-color);
+    
     .recipe-card-info{
         padding:15px;
     }
@@ -16,6 +17,7 @@
     }
     .chef-img{
         height:60px;
+        position: absolute;
         width: 60px;
         border-radius: 50%;
         border: 1px solid var(--background-light);
@@ -25,17 +27,22 @@
 
     }
     .recipe-title{
-        font-size: 1.25em;
+        font-size: 1em;
         font-weight: bold;
         margin-bottom: .5em;
         color: var(--text-color);
-        margin-top: .25em;
+        margin-top: .50em;
     }
     .recipe-desc{
         color: var(--text-light);
-        font-size: .9em;
+        font-size: .8em;
         letter-spacing: 1px;
         margin-bottom: .75em;
+        display: -webkit-box;        /* Enables the webkit box model */
+        -webkit-box-orient: vertical; /* Specifies vertical orientation */
+        overflow: hidden;            /* Hides overflowing text */
+        -webkit-line-clamp: 2;       /* Limits the text to 3 lines */
+        max-height: 4.5em;           /* Approx height of 3 lines */
     }
     .view-btn{
         background-color: var(--primary-color);
