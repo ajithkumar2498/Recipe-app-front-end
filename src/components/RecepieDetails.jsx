@@ -26,7 +26,7 @@ function RecepieDetails() {
             const ing = res.data.recipe.ingredients[0].split(',')
             setIngredients(ing)
             // setProcedure(procedure.split('.'))
-            toast.success(`${res.data.recipe.recipename} recipe is here`, {icon:"🍛"})
+            toast.success(`your ${res.data.recipe.recipename} recipe is here`, {icon:"🍛"})
           }else{
             throw new Error("Unexpected response from server");
           }
@@ -67,14 +67,6 @@ function RecepieDetails() {
         <span>Instructions</span>
            <ul className="instruction">
             <li>{recipe.procedure}</li>
-            {/* <li>hii</li>
-            <li>hii</li>
-            <li>hii</li>
-            <li>hii</li>
-            <li>hii</li>
-            <li>hii</li>
-            <li>hii</li>
-            <li>hii</li> */}
            </ul>
         </div>
        </div>

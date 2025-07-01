@@ -5,9 +5,6 @@ import { useNavigate } from 'react-router-dom'
 function RecipeCard({re, index}) {
   const navigate = useNavigate()
 
-  // useEffect(()=>{
-
-  // },[])
   return <>
      <div className="recipe-card">
        <CustomImages imgSrc={re.recipeimage.url} pt="65%"/>

@@ -15,8 +15,8 @@
     }
     .recipe-name{
         padding-right: 15em;
-        flex-grow: 1;
-        flex-basis: 200;
+        margin-left: 25px;
+        width: 100vw;
         font-size: 30px;
         color: #0A0A0A; 
         font-weight: 700;
@@ -43,27 +43,38 @@
   .Procedures{
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
+    padding: 8px;
     justify-content: space-evenly;
     .ingredients{
-
-        span{
-            background-color: var(--primary-color);
-            color: #ffffff;
-            padding: 6px;
-            border-radius: 3px;
-            box-shadow: 1px 3px 6px var(--shadow-color);
-        }
-        .ingredient{
+        height:100vh;
+        display: flex;
+        margin: auto;
+        gap:8px;
+        flex-direction:column;
+        overflow-y: scroll;
+        .ingr{
+            display: flex;
+            flex-direction: column;
+            .ingredient{
                 margin-top: 2em;
                 list-style-type: none;
                 color: var(--text-color);
                 margin-bottom: 2em;
+                span{
+                    background-color: var(--primary-color);
+                    color: #ffffff;
+                    padding: 6px;
+                    text-align: center;
+                    border-radius: 3px;
+                    box-shadow: 1px 3px 6px var(--shadow-color);
+                }
                 .fa{
                     margin-right: 10px;
                     color: var(--primary-color);
                 }
           }
+
+        }
     }
     .Instructions{
         span{

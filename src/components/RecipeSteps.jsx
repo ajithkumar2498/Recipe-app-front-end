@@ -26,7 +26,7 @@ function RecipeSteps() {
                 const pro = response.data.recipe.procedure.split('.')
                 setIngredients(ing)
                 setProcedure(pro)
-                toast.success(`${response.data.recipe.recipename} recipe is here`, {icon:"🥘"})
+                toast.success(`your ${response.data.recipe.recipename} recipe is here`, {icon:"🥘"})
               }else{
                 throw new Error("Unexpected response from server");
               }
@@ -55,11 +55,13 @@ function RecipeSteps() {
       </div>
        <div className="Procedures">
         <div className="ingredients">
+          <div className='ingr'>
           <span>Ingredients</span>
           {ingredients.map((ingredient, index) =>{ return (<ul className="ingredient" key={index} >
                 <li> <FontAwesomeIcon className="fa"icon={faSpoon}/> {ingredient}</li>
               </ul>)
             })}
+          </div>
         </div>
         <div className="Instructions">
         <span>Instructions</span>
