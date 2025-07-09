@@ -35,7 +35,7 @@ function RecipeSteps() {
             }
           };
         fetchRecipe();
-        },4000)
+        },2000)
       },[id])
       const navigate = useNavigate()
   return <>
@@ -54,12 +54,12 @@ function RecipeSteps() {
         </div> 
       </div>
        <div className="Procedures">
+          <span>Ingredients</span>
         <div className="ingredients">
           <div className='ingr'>
-          <span>Ingredients</span>
-          {ingredients.map((ingredient, index) =>{ return (<ul className="ingredient" key={index} >
-                <li> <FontAwesomeIcon className="fa"icon={faSpoon}/> {ingredient}</li>
-              </ul>)
+          {ingredients.map((ingredient, index) =>{ return (<p className="ingredient" key={index} >
+                <span> <FontAwesomeIcon className="fa"icon={faSpoon}/> <span>{index+1}</span> {ingredient}</span>
+              </p>)
             })}
           </div>
         </div>

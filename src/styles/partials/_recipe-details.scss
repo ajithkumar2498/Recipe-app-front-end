@@ -50,16 +50,18 @@
         display: flex;
         margin: auto;
         gap:8px;
-        flex-direction:column;
+        flex-direction:row;
         overflow-y: scroll;
         .ingr{
             display: flex;
             flex-direction: column;
             .ingredient{
-                margin-top: 2em;
+                margin-top: 1em;
+                display: flex;
+                flex-direction: row;
                 list-style-type: none;
                 color: var(--text-color);
-                margin-bottom: 2em;
+                margin-bottom: 1em;
                 span{
                     background-color: var(--primary-color);
                     color: #ffffff;
